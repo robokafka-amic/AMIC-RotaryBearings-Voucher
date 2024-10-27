@@ -1,0 +1,21 @@
+Rotary bearings project 
+
+- Connected via Websocket from Neuron app
+  - Needs an end url to connect to websocket
+    - Uses Ngrok to create the url
+  - The end url needs a local service to run, 
+    - Creates a local service using flask which connects to end url / wh websocket
+  - The flask service is also connected to a local mqtt broker sending data 
+    - Data '21006550' sent to topic 'RotaryBearings/Neuron/alias'
+    - Data '1' sent to topic 'RotaryBearings/Neuron/pv'
+    - Data '33' sent to topic 'RotaryBearings/Neuron/type'
+    - Data '21006550' sent to topic 'RotaryBearings/Neuron/sn'
+    - Data '[0, 18.2]' sent to topic 'RotaryBearings/Neuron/values'
+    - Data '["g", "\u00b0C"]' sent to topic 'RotaryBearings/Neuron/si'
+    - Data '-50.5' sent to topic 'RotaryBearings/Neuron/rssi'
+    - Data '1730040198240' sent to topic 'RotaryBearings/Neuron/time'
+    - Data '[0, 182]' sent to topic 'RotaryBearings/Neuron/rawValues'
+    - Data 'V2228331560310' sent to topic 'RotaryBearings/Neuron/gatewaySn'
+    - Data '{}' sent to topic 'RotaryBearings/Neuron/bodyParams'
+  - Create an Arduino micro plc logic that can connect to the mqtt broker and create input values for PLC 
+  - PLC connects to any standard lubricator and sends digial input. 
