@@ -24,17 +24,17 @@ struct PLCSharedVarsOutput_t
 PLCSharedVarsOutput_t& PLCOut = (PLCSharedVarsOutput_t&)m_PLCSharedVarsOutputBuf;
 
 
-AlPlc AxelPLC(-17995374);
+AlPlc AxelPLC(1816647893);
 
 #include <WiFi.h>
 #include <ArduinoMqttClient.h>
 
 // Wi-Fi credentials
-const char* ssid = "SKYATTVN";
-const char* password = "cWYSQ51DUgsv";
+const char* ssid = "VM1858024";
+const char* password = "c4Eykoad4tMspsor";
 
 // MQTT broker details
-const char* mqtt_server = "192.168.0.51";
+const char* mqtt_server = "10.90.101.241";
 const int mqtt_port = 1883;
 const char* mqtt_user = "user";
 const char* mqtt_password = "123qweasd";
@@ -44,18 +44,23 @@ WiFiClient wifiClient;
 MqttClient mqttClient(wifiClient);
 
 unsigned long lastPublishTime = 0;
-
-#line 46 "C:\\Users\\3057675\\OneDrive - Queen's University Belfast\\2024_Manufacturing digitalization\\AMIC\\rotary bearings\\neuron-mqtt-plcopta\\LLSketch\\LLSketch.ino"
+/*
+IPAddress local_IP(192,168,0,125 ); // Your desired static IP
+IPAddress gateway(192,168,0, 1);    // Network gateway
+IPAddress subnet(255, 255, 255, 0);   // Subnet mask
+IPAddress dns(8, 8, 8, 8);          // Preferred DNS server
+*/
+#line 51 "C:\\Users\\3057675\\OneDrive - Queen's University Belfast\\2024_Manufacturing digitalization\\AMIC\\rotary bearings\\neuron-mqtt-plcopta\\LLSketch\\LLSketch.ino"
 void setup();
-#line 70 "C:\\Users\\3057675\\OneDrive - Queen's University Belfast\\2024_Manufacturing digitalization\\AMIC\\rotary bearings\\neuron-mqtt-plcopta\\LLSketch\\LLSketch.ino"
+#line 75 "C:\\Users\\3057675\\OneDrive - Queen's University Belfast\\2024_Manufacturing digitalization\\AMIC\\rotary bearings\\neuron-mqtt-plcopta\\LLSketch\\LLSketch.ino"
 void loop();
-#line 91 "C:\\Users\\3057675\\OneDrive - Queen's University Belfast\\2024_Manufacturing digitalization\\AMIC\\rotary bearings\\neuron-mqtt-plcopta\\LLSketch\\LLSketch.ino"
+#line 96 "C:\\Users\\3057675\\OneDrive - Queen's University Belfast\\2024_Manufacturing digitalization\\AMIC\\rotary bearings\\neuron-mqtt-plcopta\\LLSketch\\LLSketch.ino"
 void connect_wifi();
-#line 104 "C:\\Users\\3057675\\OneDrive - Queen's University Belfast\\2024_Manufacturing digitalization\\AMIC\\rotary bearings\\neuron-mqtt-plcopta\\LLSketch\\LLSketch.ino"
+#line 111 "C:\\Users\\3057675\\OneDrive - Queen's University Belfast\\2024_Manufacturing digitalization\\AMIC\\rotary bearings\\neuron-mqtt-plcopta\\LLSketch\\LLSketch.ino"
 void connect_mqtt();
-#line 121 "C:\\Users\\3057675\\OneDrive - Queen's University Belfast\\2024_Manufacturing digitalization\\AMIC\\rotary bearings\\neuron-mqtt-plcopta\\LLSketch\\LLSketch.ino"
+#line 128 "C:\\Users\\3057675\\OneDrive - Queen's University Belfast\\2024_Manufacturing digitalization\\AMIC\\rotary bearings\\neuron-mqtt-plcopta\\LLSketch\\LLSketch.ino"
 void onMqttMessage(int messageSize);
-#line 46 "C:\\Users\\3057675\\OneDrive - Queen's University Belfast\\2024_Manufacturing digitalization\\AMIC\\rotary bearings\\neuron-mqtt-plcopta\\LLSketch\\LLSketch.ino"
+#line 51 "C:\\Users\\3057675\\OneDrive - Queen's University Belfast\\2024_Manufacturing digitalization\\AMIC\\rotary bearings\\neuron-mqtt-plcopta\\LLSketch\\LLSketch.ino"
 void setup() {
     
     Serial.begin(9600);
@@ -102,6 +107,8 @@ void loop() {
 
 // Wi-Fi connection function
 void connect_wifi() {
+  
+  //WiFi.config(local_IP, gateway, subnet, dns);
   WiFi.begin(ssid, password);
   unsigned long startAttemptTime = millis();
   const unsigned long wifiTimeout = 10000;  // 10-second timeout for Wi-Fi connection

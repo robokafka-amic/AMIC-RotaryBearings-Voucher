@@ -4,7 +4,7 @@ import threading
 import json
 
 # Configurations
-MQTT_BROKER = "192.168.0.51"  # Replace with your MQTT broker IP
+MQTT_BROKER = "10.90.101.241"  # Replace with your MQTT broker IP
 MQTT_PORT = 1883  # Typically 1883 for MQTT
 MQTT_USERNAME = "user"
 MQTT_PASSWORD = "123qweasd"

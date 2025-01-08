@@ -1,0 +1,9 @@
+{
+  "additionalFiles": "",
+  "compiler.optimization_flags": "",
+  "customBuildProperties": "build.warn_data_percentage=75",
+  "fqbn": "arduino:mbed_opta:opta",
+  "hardwareFolders": "C:\\Users\\3057675\\AppData\\Local\\T\\A\\packages",
+  "otherLibrariesFolders": "C:\\Users\\3057675\\AppData\\Local\\T\\U\\libraries",
+  "sketchLocation": "C:\\Users\\3057675\\OneDrive - Queen's University Belfast\\2024_Manufacturing digitalization\\AMIC\\rotary bearings\\api2opta\\api2opta\\LLSketch"
+}
